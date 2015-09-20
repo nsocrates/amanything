@@ -1,0 +1,54 @@
+%nav-item {
+	line-height: 7.5rem;
+	padding: 0 2rem;
+	position: relative;
+}
+
+.top-bar {
+	background: $black-lightest;
+	height: 7.5rem;
+}
+
+.top-bar-section {
+
+	.title > a {
+		padding: 0;
+
+		&:hover:after {
+			border: 0;
+		}
+	}
+
+	.greeting {
+		@extend %nav-item;
+	}
+
+	li {
+		display: flex;
+
+		> a {
+			@extend %nav-item;
+
+			&:after {
+				border-bottom: 0.1rem solid transparent;
+				content: '';
+				height: 7rem;
+				left: 0;
+				position: absolute;
+				top: 0;
+				transition: all 0.1s linear;
+				width: 100%;
+			}
+
+			&:hover:after {
+				border-bottom: 0.1rem solid $brown;
+				height: 7.5rem;
+			}
+		}
+	}
+}
+
+.active {
+	border-bottom: 0.1rem solid $brown;
+	height: 7.6rem;
+}

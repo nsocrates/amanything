@@ -1,0 +1,106 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	background: $black-lightest;
+	color: $black-primary;
+	font-size: $root-font-size;
+	font-weight: 300;
+}
+
+body {
+	font-family: $font-primary;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+}
+
+h1 {
+	@include baseline(4.8rem);
+}
+
+h2 {
+	@include baseline(3.6rem);
+}
+
+h3 {
+	@include baseline(2.4rem);
+}
+
+h4 {
+	@include baseline(2.1rem);
+}
+
+p {
+	@include baseline(1.8rem);
+	color: $black-primary;
+}
+
+a {
+	color: $brown;
+	text-decoration: none;
+}
+
+small {
+	@include baseline(1.4rem);
+	color: $black-secondary;
+	margin-bottom: 0;
+}
+
+hr {
+	opacity: $secondary;
+}
+
+.text-warning {
+	color: $warning;
+}
+
+.text-lead {
+	color: $brown;
+}
+
+.clearfix:after {
+	clear: both;
+	content: '';
+	display: block;
+}
+
+.float-right {
+	float: right;
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 96rem;
+	padding-bottom: 5rem;
+	width: 80%;
+}
+
+.flex-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.flex-end {
+	justify-content: flex-end;
+}
+
+.flex-center {
+	justify-content: center;
+}
+
+.pull-right {
+	margin-left: auto;
+}
+
+.accent:hover {
+	color: $glowing-blue;
+}
+
+.subtle:hover {
+	border-bottom: 0.1rem solid $brown;
+}
+
+.link-warning:hover {
+	color: $warning;
+}

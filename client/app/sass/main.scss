@@ -1,0 +1,97 @@
+textarea {
+	resize: vertical;
+}
+
+.form-control {
+	@include baseline(1.6rem);
+	background: $off-white;
+	border: 0.1rem solid $black-disabled;
+	font-family: $font-primary;
+	font-weight: 300;
+	outline: 0;
+	padding: 1.2rem;
+	transition: all 0.1s ease-in-out;
+	width: 100%;
+
+	&:focus {
+		border: 0.1rem solid $glowing-blue;
+		box-shadow: 0 0 .5rem $glowing-blue;
+	}
+}
+
+.btn {
+	@include baseline(1.6rem);
+	border: 0;
+	color: $black-primary;
+	font-family: $font-primary;
+	font-weight: 300;
+	padding: 1rem;
+	width: 25%;
+
+	&:focus {
+		border: 0;
+		outline: 0;
+	}
+}
+
+.btn-primary {
+	background-color: $dark-pink;
+	color: $off-white;
+
+	&:hover {
+		background-color: rgba($dark-pink, $primary);
+	}
+}
+
+.btn-secondary {
+	background-color: $brown;
+	color: $off-white;
+
+	&:hover {
+		background-color: rgba($brown, $primary);
+	}
+}
+
+.btn-twitter:hover {
+	color: $glowing-blue;
+}
+
+.help-block {
+	color: rgb(255, 0, 0);
+	line-height: 0;
+	margin-bottom: 3.0605rem;
+}
+
+.post-container {
+	background-color: $black-lightest;
+	border-radius: 0.5rem;
+	width: 100%;
+
+	> h3 {
+		margin-bottom: 0;
+		padding-bottom: 1.0605rem;
+	}
+}
+
+.post {
+	border-radius: 0.5rem;
+	margin-bottom: 1rem;
+
+	> p {
+		margin-bottom: 0;
+	}
+}
+
+.even {
+	background-color: $blue;
+}
+
+.odd {
+	background-color: $pink;
+}
+
+.reply {
+	background-color: $off-white;
+	border-radius: 0.5rem;
+	display: block;
+}

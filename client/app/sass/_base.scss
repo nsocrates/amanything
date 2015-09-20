@@ -1,0 +1,40 @@
+$font-primary: 'Lato', sans-serif;
+$root-font-size: 62.5%;
+$base-font-size: 1.8rem;
+$base-line-height: 1.611;
+$cap-height: 0.51;
+
+$primary: 0.71;
+$secondary: 0.54;
+$hint: 0.38;
+$disabled: 0.12;
+$lightest: 0.025;
+
+$black-primary: rgba(#000, $primary);
+$black-secondary: rgba(#000, $secondary);
+$black-hint: rgba(#000, $hint);
+$black-disabled: rgba(#000, $disabled);
+$black-lightest: rgba(#000, $lightest);
+
+$brown: #805841;
+$blue: #dcf7f3;
+$off-white: #fffcdd;
+$pink: #ffd8d8;
+$dark-pink: #f5a2a2;
+$glowing-blue: #acefe5;
+
+$warning: #f00;
+
+@mixin baseline($font-size, $scale: 2) {
+
+	$rhythm: $base-line-height * $font-size / $scale;
+	$lines: ceil(($font-size + 0.001) / $rhythm);
+	$line-height: $rhythm * $lines / $font-size;
+	$baseline-distance: ($line-height - $cap-height) / 2;
+
+	font-size: $font-size;
+	line-height: $line-height;
+	padding-top: $baseline-distance + rem;
+	margin-bottom: $base-line-height - $baseline-distance + rem;
+
+}

@@ -1,0 +1,37 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+	<h1>{{awesomeUser.name}}'s Page</h1>
+
+	<form name='form' ng-Submit="post(form)" novalidate>
+		<input required class="form-control" name="name" placeholder="Your name" type="text"
+			 ng-model="newThing.created_by"/>
+		<textarea required class="form-control" name="textarea" maxlength="200" rows="5" placeholder="Ask something" ng-model="newThing.text"></textarea>
+		<input class="btn btn-primary" type="submit" value="Post!"/>
+	</form>
+
+	<div class="post-container" id="post-container">
+		<h3 class="text-lead">{{awesomeUser.name}}'s Wall</h3>
+		<div class="post clearfix" ng-repeat="thing in awesomeThings | orderBy:'createdAt':true" ng-class-odd="'odd'" ng-class-even="'even'">
+			<p>{{thing.text}}</p>
+
+			<small>
+				Posted by {{thing.created_by}} (<span ng-show="{{thing.username.length}}"><a class="subtle" href="/wall/{{thing.username}}">{{thing.username}}</a></span><span ng-show="{{!thing.username.length}}">Guest</span>)
+			</small>
+
+			<small class="float-right">{{thing.created_at | date:"h:mma on MMM d, y"}}</small><br/>
+
+			<small class="reply" ng-hide="{{!thing.reply}}">{{thing.reply}}</small>
+			<div ng-show="owner()">
+				<small><a class="subtle" href="#" ng-click="hideMe = !hideMe">Reply/Edit</a></small>
+				<small class="float-right"><a class="link-warning" href="#" ng-click="deleteThing(thing)">Delete</a></small>
+				<form name="form" ng-Submit="reply(thing)" ng-show="hideMe" novalidate>
+					<textarea required class="form-control" name="textarea" rows="5" placeholder="Your reply"
+						 ng-model="thingWithId.reply"></textarea>
+					<input class="btn btn-primary" type="submit" value="Save"/>
+					<input class="btn btn-secondary" type="button" value="Cancel" ng-click="hideMe = !hideMe"/>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
