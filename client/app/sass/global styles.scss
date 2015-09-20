@@ -51,6 +51,18 @@ hr {
 	opacity: $secondary;
 }
 
+.hide-for-small {
+	@include show-for-small-only {
+		display: none !important;
+	}
+}
+
+.show-for-small {
+	@include show-for-medium-up {
+		display: none !important;
+	}
+}
+
 .text-warning {
 	color: $warning;
 }
