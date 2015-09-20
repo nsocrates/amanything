@@ -4,10 +4,15 @@
 	<h1>{{awesomeUser.name}}'s Page</h1>
 
 	<form name='form' ng-Submit="post(form)" novalidate>
+
 		<input required class="form-control" name="name" placeholder="Your name" type="text"
 			 ng-model="newThing.created_by"/>
-		<textarea required class="form-control" name="textarea" maxlength="200" rows="5" placeholder="Ask something" ng-model="newThing.text"></textarea>
-		<input class="btn btn-primary" type="submit" value="Post!"/>
+		<p class="help-block" ng-show="form.name.$error.required && submitted">Name is required.</p>
+
+		<textarea required class="form-control" name="textarea" maxlength="200" rows="5" placeholder="Ask {{awesomeUser.name}} a question" ng-model="newThing.text"></textarea>
+		<p class="help-block" ng-show="form.textarea.$error.required && submitted">Ask something.</p>
+
+		<input class="btn btn-primary" type="submit" value="Ask Away!"/>
 	</form>
 
 	<div class="post-container" id="post-container">
