@@ -51,6 +51,14 @@ hr {
 	opacity: $secondary;
 }
 
+code {
+	font-size: 1.6rem;
+	color: #d20000;
+	border-radius: 0.5rem;
+	background-color: $black-lightest;
+	padding: 0.5rem;
+}
+
 .hide-for-small {
 	@include show-for-small-only {
 		display: none !important;

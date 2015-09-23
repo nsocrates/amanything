@@ -5,7 +5,7 @@
 
 	<h3 ng-hide="isLoggedIn()"><a class="accent" href="/login">Login</a> or <a class="accent" href="/signup">register</a> to post on the main wall.</h3>
 
-	<form name='form' ng-Submit="post(form)" ng-show="isLoggedIn()" novalidate>
+	<form name="form" ng-Submit="post(form)" ng-show="isLoggedIn()" novalidate>
 		<h3 class="text-lead">{{getCurrentUser().name}} says:</h3>
 		<textarea required class='form-control' name='textarea' maxlength="200" rows="5" placeholder="Say something" ng-model="newThing.text"></textarea>
 		<input class="btn btn-primary" type="submit" value="Post!"/>
@@ -15,10 +15,10 @@
 		<h3 class="text-lead">Main Wall</h3>
 		<div class="post clearfix" ng-repeat="thing in awesomeThings | orderBy:'createdAt':true" ng-class-odd="'odd'" ng-class-even="'even'">
 			<p>{{thing.text}}</p>
-			<small>
+			<small class="sm-text-block">
 				Posted by {{thing.created_by}} (<a class="subtle" href="/wall/{{thing.username}}">{{thing.username}}</a>)
 			</small>
-			<small class='float-right'>{{thing.created_at | date:"h:mma on MMM d, y"}}</small><br/>
+			<small class="sm-text-block float-right">{{thing.created_at | date:"h:mma on MMM d, y"}}</small><br/>
 		</div>
 	</div>
 </div>

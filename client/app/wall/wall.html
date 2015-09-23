@@ -20,11 +20,11 @@
 		<div class="post clearfix" ng-repeat="thing in awesomeThings | orderBy:'createdAt':true" ng-class-odd="'odd'" ng-class-even="'even'">
 			<p>{{thing.text}}</p>
 
-			<small>
+			<small class="sm-text-block">
 				Posted by {{thing.created_by}} (<span ng-show="{{thing.username.length}}"><a class="subtle" href="/wall/{{thing.username}}">{{thing.username}}</a></span><span ng-show="{{!thing.username.length}}">Guest</span>)
 			</small>
 
-			<small class="float-right">{{thing.created_at | date:"h:mma on MMM d, y"}}</small><br/>
+			<small class="sm-text-block float-right">{{thing.created_at | date:"h:mma on MMM d, y"}}</small><br/>
 
 			<small class="reply" ng-hide="{{!thing.reply}}">{{thing.reply}}</small>
 			<div ng-show="owner()">

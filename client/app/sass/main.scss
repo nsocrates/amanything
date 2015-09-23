@@ -26,7 +26,12 @@ textarea {
 	font-family: $font-primary;
 	font-weight: 300;
 	padding: 1rem;
-	width: 25%;
+	width: 100%;
+
+	@include show-for-medium-up {
+		margin-right: 1rem;
+		width: 25%;
+	}
 
 	&:focus {
 		border: 0;
@@ -94,4 +99,12 @@ textarea {
 	background-color: $off-white;
 	border-radius: 0.5rem;
 	display: block;
+}
+
+.sm-text-block {
+	@include show-for-small-only {
+		display: inline-block;
+		float: none;
+		width: 100%;
+	}
 }
